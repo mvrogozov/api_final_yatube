@@ -1,8 +1,9 @@
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
-from rest_framework import permissions, filters
+from rest_framework import permissions, filters, status
 from posts.models import Post, Follow, User, Comment, Group
 from .serializers import CommentSerializer, GroupSerializer, PostSerializer, UserSerializer, FollowSerializer
 from .api_permissions import IsAuthorOrReadOnly
@@ -54,4 +55,10 @@ class FollowsViewSet(ModelViewSet):
         return queryset
 
     def perform_create(self, serializer):
+        '''print('\n\n\ndata= ', serializer)
+        if 'following' not in serializer.initial_data:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+            raise ValueError('required field not found')'''
+        '''if self.request.user == serializer.initial_data['following']:
+            raise ValueError('following yourself is forbbiden')'''
         serializer.save(user=self.request.user)
