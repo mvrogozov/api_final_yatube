@@ -7,7 +7,7 @@ API_VERSION = 'v1/'
 router = routers.DefaultRouter()
 router.register(r'posts', PostsViewSet, basename='api_posts')
 router.register(r'users', UsersViewSet, basename='api_users')
-router.register(r'follows', FollowsViewSet, basename='api_follow')
+router.register(r'follow', FollowsViewSet, basename='api_follow')
 router.register(r'groups', GroupViewSet, basename='api_group')
 router.register(
     r'posts/(?P<post_id>\d+)\/comments',

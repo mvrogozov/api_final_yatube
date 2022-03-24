@@ -44,16 +44,16 @@ class Comment(models.Model):
 class Follow(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='follower')
-    author = models.ForeignKey(
+    following = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='following')
 
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=('user', 'author'),
+                fields=('user', 'following'),
                 name='unique_follow'
             )
         ]
 
     def __str__(self):
-        return f'{self.user.username} - {self.author.username}'
+        return f'{self.user.username} - {self.following.username}'

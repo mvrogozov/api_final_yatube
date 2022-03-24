@@ -7,6 +7,7 @@ class TestFollowAPI:
 
     @pytest.mark.django_db(transaction=True)
     def test_follow_not_found(self, client, follow_1, follow_2):
+        print('\n\n\nargs= ', follow_1, '------>', follow_2, '\n\n\n')
         response = client.get('/api/v1/follow/')
 
         assert response.status_code != 404, (
