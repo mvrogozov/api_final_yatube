@@ -1,12 +1,12 @@
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework.authtoken import views
-from .views import CommentsViewSet, FollowsViewSet, GroupViewSet, PostsViewSet, UsersViewSet
+from .views import CommentsViewSet, FollowsViewSet, GroupViewSet
+from .views import PostsViewSet
 
 API_VERSION = 'v1/'
 router = routers.DefaultRouter()
 router.register(r'posts', PostsViewSet, basename='api_posts')
-router.register(r'users', UsersViewSet, basename='api_users')
 router.register(r'follow', FollowsViewSet, basename='api_follow')
 router.register(r'groups', GroupViewSet, basename='api_group')
 router.register(
