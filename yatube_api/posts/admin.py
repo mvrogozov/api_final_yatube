@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from .models import Comment, Follow, Post
+
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = (
@@ -14,6 +16,7 @@ class FollowAdmin(admin.ModelAdmin):
         'following',
         'id'
     )
+
 
 admin.site.register(Post)
 admin.site.register(Comment, CommentAdmin)

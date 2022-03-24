@@ -1,8 +1,8 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 from rest_framework.authtoken import views
-from .views import CommentsViewSet, FollowsViewSet, GroupViewSet
-from .views import PostsViewSet
+
+from .views import CommentsViewSet, FollowsViewSet, GroupViewSet, PostsViewSet
 
 API_VERSION = 'v1/'
 router = routers.DefaultRouter()
