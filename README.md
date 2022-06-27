@@ -1,7 +1,7 @@
 ## Проект Yatube_api.
 Проект для доступа к yatube через API.
 
-Yatube_api предоставляет программный интерфейс для связи с различными приложениями.
+Yatube_api предоставляет программный интерфейс для связи проекта Yatube с различными приложениями.
 
 ## Возможности
 
@@ -17,13 +17,13 @@ Yatube_api предоставляет программный интерфейс 
 git clone git@github.com:mvrogozov/api_final_yatube.git
 ```
 ```
-cd kittygram
+cd api_final_yatube
 ```
 
 Cоздать и активировать виртуальное окружение:
 
 ```
-python3 -m venv env
+python3 -m venv venv
 ```
 
 ```
@@ -38,6 +38,12 @@ python3 -m pip install --upgrade pip
 
 ```
 pip install -r requirements.txt
+```
+
+Перейти в папку yatube_api
+
+```
+cd yatube_api
 ```
 
 Выполнить миграции:
@@ -73,7 +79,16 @@ GET http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
 ```
 POST http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
 {
-    "text": "Coment text"
+    "text": "Comment text"
 }
 ```
 
+### Полная документация
+```
+http://127.0.0.1:8000/redoc/
+```
+
+
+***
+Автор:
+* Рогозов Михаил
